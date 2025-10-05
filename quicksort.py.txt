@@ -1,16 +1,19 @@
 def quick_sort(arr):
-    if len(arr) <= 1:
-        return arr
-    
-    first = arr[0]  
+    pivot = arr[0]  
     left = []      
     right = []      
 
     for x in arr[1:]:  
-        if x < first:
+        if x <= pivot:
             left.append(x)
         else:
             right.append(x)
-    return quick_sort(left) + [first] + quick_sort(right)
+    return left, pivot, right
+def quick_s(arr):
+    if len(arr) <= 1:
+        return arr
+    left, pivot,right = quick_sort(arr)
+    return quick_s(left) + [pivot] + quick_s(right)
 n = [6, 27, 46, 21, 1]
-print(quick_sort(n))
+print(quick_s(n))
+
