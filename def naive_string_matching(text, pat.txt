@@ -1,0 +1,19 @@
+def naive_string_matching(text, pattern):
+    n = len(text)
+    m = len(pattern)
+    for s in range(n - m + 1):
+        j = 0
+        while j < m and text[s + j] == pattern[j]:
+            j += 1
+        if j == m:
+            return s 
+            
+    return -1
+text = "ababaabcabac"
+pattern = "aba" 
+
+index = naive_string_matching(text, pattern)
+if index != -1:
+    print(f"'{pattern}'gtnvel e '{text}' toxum {index} dirqic")
+else:
+    print(f"'{pattern}'error")

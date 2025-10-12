@@ -1,0 +1,27 @@
+import math
+
+def jump_search(arr, key):
+    n = len(arr)
+    step = int(math.sqrt(n))
+    p = 0
+    while arr[min(step, n) - 1] < key:
+        p = step
+        step += int(math.sqrt(n))
+        if p >= n:
+            return -1 
+    while arr[p] < key:
+        p += 1
+        if p == min(step, n):
+            return -1 
+            
+    if arr[p] == key:
+        return p   
+    return -1
+sorted_data = [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610]
+t = 55
+
+index = jump_search(sorted_data, t)
+if index != -1:
+    print(f"'tivy {t}'index {index}")
+else:
+    print(f"'{t}'error")

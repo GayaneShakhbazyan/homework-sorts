@@ -1,0 +1,14 @@
+def linear_search(arr, key):
+    for i in range(len(arr)):
+        if arr[i] == key:
+            return i 
+    return 0
+
+data = [13, 15, 33, 63, 878, 69, 27, 25, 48]
+t = 27
+
+index = linear_search(data, t)
+if index != 0:
+    print(f"'tivy {t}  indexy{index}")
+else:
+    print(f"'{t} error")
